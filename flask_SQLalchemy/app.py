@@ -65,7 +65,7 @@ class Product(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     name = db.Column(db.String(255),nullable=False)
     price = db.Column(db.Float,nullable=False)
-    orders = db.relationship("order", secondary=order_product,backref=db.backref("products"))
+    orders = db.relationship("Orders", secondary=order_product,backref=db.backref("products"))
 
 #to get or to see all table info
 @app.route("/customers", methods=["GET"])
